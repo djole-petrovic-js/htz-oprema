@@ -13,42 +13,42 @@ export default function FAQ() {
     }));
   };
 
-  // FAQ data structure
-  const faqData = [
-    {
-      id: 0,
-      question: "Koliko dugo traje proizvodnja HTZ opreme?",
-      answer: "Standardna proizvodnja traje 2-4 nedelje, u zavisnosti od složenosti proizvoda i količine. Za hitne slučajeve možemo organizovati ekspresnu proizvodnju u roku od 3-5 dana."
-    },
-    {
-      id: 1,
-      question: "Da li radite po meri i kako funkcioniše proces?",
-      answer: "Da, radimo isključivo po meri. Proces uključuje: konsultacije, merenje, kreiranje uzorka, odobravanje od strane klijenta, i tek onda početak proizvodnje. Pružamo besplatne konsultacije i merenje."
-    },
-    {
-      id: 2,
-      question: "Koje materijale koristite u proizvodnji?",
-      answer: "Koristimo samo najkvalitetnije materijale: fire-resistant tkanine, nomex, kevlar, i druge specijalizovane materijale koji zadovoljavaju najstrože sigurnosne standarde. Svi materijali imaju potrebne sertifikate."
-    },
-    {
-      id: 3,
-      question: "Da li pružate garanciju na proizvode?",
-      answer: "Da, pružamo 2 godine garancije na sve naše proizvode. Garancija pokriva defekte u materijalu i radovima. Takođe, pružamo besplatno održavanje i popravke tokom garancijskog perioda."
-    },
-    {
-      id: 4,
-      question: "Kako možemo da naručimo vaše usluge?",
-      answer: "Možete nas kontaktirati telefonom, emailom, ili direktno u našoj radnji. Prvi korak je besplatna konsultacija gde ćemo razmotriti vaše potrebe, dati predloge i napraviti ponudu. Radimo sa fizičkim i pravnim licima."
-    },
-    {
-      id: 5,
-      question: "Da li radite sa velikim količinama i korporativnim klijentima?",
-      answer: "Da, imamo iskustvo u radu sa velikim količinama i korporativnim klijentima. Možemo da proizvedemo i isporučimo stotine komada HTZ opreme u kratkom roku. Pružamo posebne cene za velike narudžbine i fleksibilne uslove plaćanja."
-    }
-  ];
-
   // Filter FAQs based on search query
   const filteredFAQs = useMemo(() => {
+    // FAQ data structure
+    const faqData = [
+      {
+        id: 0,
+        question: "Koliko dugo traje proizvodnja HTZ opreme?",
+        answer: "Standardna proizvodnja traje 2-4 nedelje, u zavisnosti od složenosti proizvoda i količine. Za hitne slučajeve možemo organizovati ekspresnu proizvodnju u roku od 3-5 dana."
+      },
+      {
+        id: 1,
+        question: "Da li radite po meri i kako funkcioniše proces?",
+        answer: "Da, radimo isključivo po meri. Proces uključuje: konsultacije, merenje, kreiranje uzorka, odobravanje od strane klijenta, i tek onda početak proizvodnje. Pružamo besplatne konsultacije i merenje."
+      },
+      {
+        id: 2,
+        question: "Koje materijale koristite u proizvodnji?",
+        answer: "Koristimo samo najkvalitetnije materijale: fire-resistant tkanine, nomex, kevlar, i druge specijalizovane materijale koji zadovoljavaju najstrože sigurnosne standarde. Svi materijali imaju potrebne sertifikate."
+      },
+      {
+        id: 3,
+        question: "Da li pružate garanciju na proizvode?",
+        answer: "Da, pružamo 2 godine garancije na sve naše proizvode. Garancija pokriva defekte u materijalu i radovima. Takođe, pružamo besplatno održavanje i popravke tokom garancijskog perioda."
+      },
+      {
+        id: 4,
+        question: "Kako možemo da naručimo vaše usluge?",
+        answer: "Možete nas kontaktirati telefonom, emailom, ili direktno u našoj radnji. Prvi korak je besplatna konsultacija gde ćemo razmotriti vaše potrebe, dati predloge i napraviti ponudu. Radimo sa fizičkim i pravnim licima."
+      },
+      {
+        id: 5,
+        question: "Da li radite sa velikim količinama i korporativnim klijentima?",
+        answer: "Da, imamo iskustvo u radu sa velikim količinama i korporativnim klijentima. Možemo da proizvedemo i isporučimo stotine komada HTZ opreme u kratkom roku. Pružamo posebne cene za velike narudžbine i fleksibilne uslove plaćanja."
+      }
+    ];
+
     if (!searchQuery.trim()) return faqData;
     
     const query = searchQuery.toLowerCase();
@@ -113,10 +113,10 @@ export default function FAQ() {
           {searchQuery && (
             <div className="mt-4 text-sm text-slate-400">
               {filteredFAQs.length === 0 ? (
-                <span>Nema rezultata za "{searchQuery}"</span>
+                <span>Nema rezultata za &ldquo;{searchQuery}&rdquo;</span>
               ) : (
                 <span>
-                  {filteredFAQs.length} {filteredFAQs.length === 1 ? 'rezultat' : 'rezultata'} za "{searchQuery}"
+                  {filteredFAQs.length} {filteredFAQs.length === 1 ? 'rezultat' : 'rezultata'} za &ldquo;{searchQuery}&rdquo;
                 </span>
               )}
             </div>

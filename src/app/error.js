@@ -67,7 +67,7 @@ export default function Error({ error, reset }) {
             </h2>
             <div className="space-y-4 text-gray-300 text-lg">
               <p>
-                <strong className="text-blue-400">1. Pokušajte ponovo</strong> - Kliknite na dugme "Pokušaj ponovo" iznad da biste ponovili operaciju.
+                <strong className="text-blue-400">1. Pokušajte ponovo</strong> - Kliknite na dugme &ldquo;Pokušaj ponovo&rdquo; iznad da biste ponovili operaciju.
               </p>
               <p>
                 <strong className="text-green-400">2. Osvežite stranicu</strong> - Ponekad jednostavno osvežavanje stranice rešava problem.
