@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getBlurDataURL } from "@/utils/getBlurDataURL";
 
 export const metadata = {
   title: "404 - Stranica nije pronađena | HTZ Oprema",
@@ -8,7 +9,8 @@ export const metadata = {
   robots: "noindex, nofollow",
 };
 
-export default function NotFound() {
+export default async function NotFound() {
+  const heroBlurDataURL = await getBlurDataURL('/hero-bg.jpg');
   return (
     <div className="min-h-screen">
 
@@ -22,6 +24,7 @@ export default function NotFound() {
             className="object-cover"
             priority
             sizes="100vw"
+            {...(heroBlurDataURL && { placeholder: "blur", blurDataURL: heroBlurDataURL })}
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactSection from "@/app/contact/components/ContactSection";
+import { getBlurDataURL } from "@/utils/getBlurDataURL";
 
 export const metadata = {
   title: "Kontakt - HTZ Oprema | Telefon, email i radno vreme",
@@ -13,7 +14,8 @@ export const metadata = {
   },
 };
 
-export default function Contact() {
+export default async function Contact() {
+  const heroBlurDataURL = await getBlurDataURL('/contact-hero-bg.jpg');
 
   return (
     <div className="min-h-screen">
@@ -28,6 +30,7 @@ export default function Contact() {
             className="object-cover"
             priority
             sizes="100vw"
+            {...(heroBlurDataURL && { placeholder: "blur", blurDataURL: heroBlurDataURL })}
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

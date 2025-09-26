@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getBlurDataURL } from "@/utils/getBlurDataURL";
 
 export const metadata = {
   title: "HTZ Oprema - Proizvodnja i šivenje zaštitne opreme | Početna",
@@ -13,7 +14,8 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const heroBlurDataURL = await getBlurDataURL('/hero-bg.jpg');
   return (
     <div className="min-h-screen">
 
@@ -27,6 +29,7 @@ export default function Home() {
             className="object-cover"
             priority
             sizes="100vw"
+            {...(heroBlurDataURL && { placeholder: "blur", blurDataURL: heroBlurDataURL })}
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
